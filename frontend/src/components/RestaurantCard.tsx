@@ -32,7 +32,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, onVoteSubmi
         key={index}
         style={{
           fontSize: '20px',
-          color: index < rating ? '#fbbf24' : '#d1d5db',
+          color: index < rating ? '#22c55e' : '#d1d5db',
           cursor: interactive ? 'pointer' : 'default',
           marginRight: '2px'
         }}
@@ -53,10 +53,10 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, onVoteSubmi
       border: '1px solid #e5e7eb'
     }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-        <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#1f2937', margin: 0 }}>
+        <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#166534', margin: 0 }}>
           {restaurant.name}
         </h3>
-        <div style={{ display: 'flex', alignItems: 'center', fontSize: '14px', color: '#6b7280' }}>
+        <div style={{ display: 'flex', alignItems: 'center', fontSize: '14px', color: '#4b5563' }}>
           <span style={{ marginRight: '4px' }}>👥</span>
           {restaurant.votes} votes
         </div>
@@ -65,11 +65,11 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, onVoteSubmi
       <div style={{ marginBottom: '16px' }}>
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
           <span style={{ marginRight: '8px' }}>📈</span>
-          <span style={{ fontSize: '14px', fontWeight: '500', color: '#374151' }}>Average Rating</span>
+          <span style={{ fontSize: '14px', fontWeight: '500', color: '#166534' }}>Average Rating</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {renderStars(Math.round(restaurant.average_rating))}
-          <span style={{ marginLeft: '8px', fontSize: '14px', color: '#6b7280' }}>
+          <span style={{ marginLeft: '8px', fontSize: '14px', color: '#4b5563' }}>
             ({restaurant.average_rating.toFixed(1)})
           </span>
         </div>
@@ -77,12 +77,12 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, onVoteSubmi
 
       <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '16px' }}>
         <div style={{ marginBottom: '12px' }}>
-          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#166534', marginBottom: '8px' }}>
             Rate this restaurant:
           </label>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {renderStars(selectedRating, true)}
-            <span style={{ marginLeft: '8px', fontSize: '14px', color: '#6b7280' }}>
+            <span style={{ marginLeft: '8px', fontSize: '14px', color: '#4b5563' }}>
               {selectedRating > 0 ? `${selectedRating} star${selectedRating > 1 ? 's' : ''}` : 'Select rating'}
             </span>
           </div>
@@ -98,8 +98,8 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, onVoteSubmi
             fontWeight: '500',
             border: 'none',
             cursor: selectedRating === 0 || isSubmitting ? 'not-allowed' : 'pointer',
-            backgroundColor: selectedRating === 0 || isSubmitting ? '#d1d5db' : '#3b82f6',
-            color: selectedRating === 0 || isSubmitting ? '#6b7280' : 'white',
+            backgroundColor: selectedRating === 0 || isSubmitting ? '#d1d5db' : '#22c55e',
+            color: selectedRating === 0 || isSubmitting ? '#4b5563' : 'white',
             fontSize: '14px'
           }}
         >
